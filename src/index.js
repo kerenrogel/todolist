@@ -8,4 +8,3 @@ ReactDOM.render(
 		<TodoList />,
 		document.getElementById("container")
 );
-

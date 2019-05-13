@@ -1,14 +1,22 @@
 .todoListMain {
 	margin: 0 auto;
-	width: 90%;
+	width: 600px;
 }
+.todoListMain .header {
+	margin: 4em 0 0 4em;
+}
+
+.todoListMain .header h1 {
+	font-size:  21px;
+	margin-bottom: 10px;
+}
+
 .todoListMain .header input {
 	padding: 10px;
 	font-size:  16px;
 	border: 2px solid #ececec;
-	width: 200px;
+	width: 300px;
 }
-
 
 .todoListMain .header button {
 	padding: 10px;
@@ -28,7 +36,7 @@
 
 .todoListMain .theList li {
 	color: #333;
-	width: 200px;
+	width: 300px;
 	background-color: rgba(44, 185, 240, 0.5);
 	padding: 15px;
 	margin-bottom: 15px;
@@ -44,4 +52,5 @@
 
 ul.theList {
 	padding: 0;
+	margin-left: 4em;
 }

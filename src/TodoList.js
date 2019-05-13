@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import TodoItems from "./TodoItems";
 import "./TodoList.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class TodoList extends Component {
 	constructor(props) {
@@ -29,12 +31,13 @@ class TodoList extends Component {
 					items: prevState.items.concat(newItem) // concat will return whole array to modify the existing one with a new enter item from _inputElement
 				};
 			});
+			toast("Successfully created: " + this._inputElement.value);
 		}
-		this._inputElement.value = "";
-		console.log(this.state.items);
-		e.preventDefault(); //prevent not everything will be load
+		else{
+			this._inputElement.value = "";
+			e.preventDefault(); //prevent not everything will be load
 	}
-
+}
 	deleteItem(key) {
 		var filteredItems = this.state.items.filter(function (item) {
 			return (item.key !==key)
@@ -48,6 +51,7 @@ class TodoList extends Component {
 		return (
 			<div className="todoListMain">
 				<div className="header">
+					<h1>Todo List</h1>
 					<form onSubmit={this.addItem}>
 						<input ref={(a) => this._inputElement = a} placeholder="Enter Tasks">
 						</input>
